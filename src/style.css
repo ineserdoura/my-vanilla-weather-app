@@ -18,14 +18,16 @@ body {
   padding: 20px;
   text-align: center;
 }
-
-#switch-to-celsius,
-#switch-to-fahrenheit {
+#current-temperature {
+  display: inline;
+}
+#celsius-link,
+#fahrenheit-link {
   color: #a9ddd7;
   transition: all 200ms ease-in-out;
 }
-#switch-to-celsius:hover,
-#switch-to-fahrenheit:hover {
+#celsius-link:hover,
+#fahrenheit-link:hover {
   color: #35495e;
   text-decoration: none;
 }

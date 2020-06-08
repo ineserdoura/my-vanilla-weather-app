@@ -27,55 +27,53 @@
       <div class="containerForecast">
         <div class="row justify-content-center">
           <div class="col-7">
-          <ul>
-            <li><h1 id="current-city">Porto</h1>
-            </li>
-              <li>
-                <h3 id="current-temperature">22
+          
+            <h1 id="current-city"></h1>
+                <h3 id="current-temperature"></h3>
                 <span id="units" style="font-size: 20px;">
-                <a id="switch-to-celsius" href="#">°C</a> |
-                <a id="switch-to-fahrenheit" href="#">°F</a>
-            </span></h3></li>
+                <a id="celsius-link" href="#">°C</a> |
+                <a id="fahrenheit-link" href="#">°F</a>
+            </span>
 
-            <img class="weather-image"src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear">
-            <li><h3 id="temperature-description"> Clear</h3></li>
-           <li> <h5> 20°  23°</h5></li>
-            <li id="sentence">Enjoy the sunny day ☀️</li>
+            <img style ="display: block; margin: 0 auto" class="weather-image"src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear">
+            <h4 id="temperature-description"> Clear</h4>
+          <h5> <span id="temp-min"> 20</span>° <span id="temp-max"> 23</span>°</h5>
+            <p id="sentence">Enjoy the sunny day ☀️</p>
            
-            </ul>
+          
           </div>
           <div class="col-5">
             <h4 id="current-date">
               Wednesday <br />
               May 13th, 2020
               <br>
-              <small id="last-update"> Last update 15:52</small>
+              <small> Last update <span id="last-update">15:52</span></small>
             </h4>
             <br />
             <ul>
               <li>
                 Real feel
                 <span id="feels-like">
-                  20°
-                </span>
+                  20
+                </span>°
               </li>
               <li>
                 Wind
                 <span id="wind">
-                  16km/h
-                </span>
+                  16
+                </span>km/h
               </li>
               <li>
                 Humidity
                 <span id="humidity">
-                  50%
-                </span>
+                  50
+                </span>%
               </li>
               <li>
                 Clouds
                 <span id="clouds">
-                  77%
-                </span>
+                  77
+                </span>%
               </li>
             </ul>
           </div>
