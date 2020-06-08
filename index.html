@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/975bf182f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      
+      </div>
+      <div class="containerForecast">
+        <div class="row justify-content-center">
+          <div class="col-6">
+            <h1 id="current-city">Porto</h1>
+            <ul>
+              <li><h3 id="current-temperature">22<span id="units">
+                <a id="switch-to-celsius" href="#">°C</a> |
+                <a id="switch-to-fahrenheit" href="#">°F</a>
+            </span></h3></li>
+
+            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear">
+            <li><h3 id="temperature-description"> Clear</h3></li>
+           <li> <h5> 20°  23°</h5></li>
+            <li id="sentence">Enjoy the sunny day ☀️</li>
+            <br />
+            <br />
+            </ul>
+          </div>
+          <div class="col-6">
+            <h4 id="current-date">
+              Wednesday <br />
+              May 13th, 2020
+            </h4>
+            <p> Last update 15:52</p>
+            <br />
+            <ul>
+              <li>
+                Real feel
+                <span id="feels-like">
+                  20°
+                </span>
+              </li>
+              <li>
+                Wind
+                <span id="wind">
+                  16km/h
+                </span>
+              </li>
+              <li>
+                Humidity
+                <span id="humidity">
+                  50%
+                </span>
+              </li>
+              <li>
+                Clouds
+                <span id="clouds">
+                  77%
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="containerWeek">
+        <div class="row justify-content-center">
+          <div class="col-2">
+            <h3>Thu</h3>
+            <br />
+            <span class="week"> 17° 14°</span>
+          </div>
+          <div class="col-2">
+            <h3>Fri</h3>
+            <br />
+            <span class="week">21° 19°</span>
+          </div>
+          <div class="col-2">
+            <h3>Sat</h3>
+            <br />
+            <span class="week">22° 18°</span>
+          </div>
+          <div class="col-2">
+            <h3>Sun</h3>
+            <br />
+            <span class="week">22° 18°</span>
+          </div>
+          <div class="col-2">
+            <h3>Mon</h3>
+            <br />
+            <span class="week">22° 18°</span>
+          </div>
+        <div class="col-2">
+            <h3>Tue</h3>
+            <br />
+            <span class="week">22° 18°</span>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <small>
+        <a
+          class="githublink"
+          href="https://github.com/ineserdoura?tab=repositories"
+          target="_blank"
+          >Open-source code </a
+        >by 👩🏽‍💻 Inês Serdoura
+      </small>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
