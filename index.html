@@ -19,37 +19,38 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
 
   <body>
     <div class="container">
-      
-      </div>
       <div class="containerForecast">
         <div class="row justify-content-center">
-          <div class="col-6">
-            <h1 id="current-city">Porto</h1>
-            <ul>
-              <li><h3 id="current-temperature">22<span id="units">
+          <div class="col-7">
+          <ul>
+            <li><h1 id="current-city">Porto</h1>
+            </li>
+              <li>
+                <h3 id="current-temperature">22
+                <span id="units" style="font-size: 20px;">
                 <a id="switch-to-celsius" href="#">°C</a> |
                 <a id="switch-to-fahrenheit" href="#">°F</a>
             </span></h3></li>
 
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear">
+            <img class="weather-image"src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear">
             <li><h3 id="temperature-description"> Clear</h3></li>
            <li> <h5> 20°  23°</h5></li>
             <li id="sentence">Enjoy the sunny day ☀️</li>
-            <br />
-            <br />
+           
             </ul>
           </div>
-          <div class="col-6">
+          <div class="col-5">
             <h4 id="current-date">
               Wednesday <br />
               May 13th, 2020
+              <br>
+              <small id="last-update"> Last update 15:52</small>
             </h4>
-            <p> Last update 15:52</p>
             <br />
             <ul>
               <li>
@@ -114,6 +115,7 @@
         </div>
         </div>
       </div>
+    </div>
     </div>
     <div class="footer">
       <small>

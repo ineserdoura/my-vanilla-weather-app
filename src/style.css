@@ -1,0 +1,69 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+/*Container */
+.container {
+  width: 600px;
+  background-image: linear-gradient(to bottom, #35495e 0%, #63b7af 100%);
+  margin: 50px auto;
+  margin-bottom: 0px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.containerForecast,
+.containerWeek {
+  margin: 10 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#switch-to-celsius,
+#switch-to-fahrenheit {
+  color: #a9ddd7;
+  transition: all 200ms ease-in-out;
+}
+#switch-to-celsius:hover,
+#switch-to-fahrenheit:hover {
+  color: #35495e;
+  text-decoration: none;
+}
+
+#current-date {
+  text-align: right;
+  font-size: 18px;
+}
+
+li {
+  list-style: none;
+  font-size: 16px;
+}
+
+#feels-like,
+#wind,
+#humidity,
+#clouds {
+  font-weight: bold;
+}
+
+.col-2 {
+  padding: 5px 5px;
+  transition: all 200ms ease-in-out;
+}
+.col-2:hover {
+  background-color: #35495e;
+  color: #63b7af;
+  border-radius: 4px;
+}
+
+.footer {
+  text-align: center;
+  padding: 0px;
+  color: #63b7af;
+}
+
+.githublink {
+  color: #35495e;
+  font-weight: bold;
+}
