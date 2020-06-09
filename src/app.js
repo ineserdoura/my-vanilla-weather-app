@@ -48,18 +48,19 @@ function formatDate(timestamp) {
 //Greet user
 
 function greetUser(timestamp) {
+  let name = prompt("Hello! Can you tell me your name?");
   let now = new Date(timestamp);
   let hoursElement = now.getHours();
   if (hoursElement >= 6 && hoursElement < 12) {
-    return `Good morning!`;
+    return `Good morning ${name}!`;
   }
   if (hoursElement >= 12 && hoursElement < 18) {
-    return `Good afternoon!`;
+    return `Good afternoon ${name}!`;
   }
   if (hoursElement >= 18 && hoursElement < 20) {
-    return `Good evening!`;
+    return `Good evening ${name}!`;
   } else {
-    return `Good night!`;
+    return `Good night ${name}!`;
   }
 }
 
@@ -80,15 +81,23 @@ function updtadeQuote(response) {
   if (description === "Snow") {
     return `Do you want to build a snowman? ☃️`;
   }
-  if (description === "Clear") {
-    return `The sun is shinning 😎`;
+  if (description === "Clear" && hour < 20) {
+    return `The sun is shinning today 😎`;
   }
-  if (description === "Clouds") {
+  if (description === "Clear" && hour >= 20) {
+    return `The moon is shinning tonight 🌕`;
+  }
+  if (description === "Clouds" && hour < 20) {
     return `The sun is a little shy today 🌤`;
+  }
+  if (description === "Clouds" && hour >= 20) {
+    return `The moon is a little shy today 🌛`;
   } else {
     return `What's happening in your city? 🤷🏽‍♀️`;
   }
 }
+
+let hour = null;
 
 // Display elements
 
@@ -107,6 +116,7 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   let quoteElement = document.querySelector("#quote");
 
+  hour = response.data.dt * 1000;
   celsiusTemperature = Math.round(response.data.main.temp);
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -128,12 +138,6 @@ function displayTemperature(response) {
   quoteElement.innerHTML = updtadeQuote(response.data.weather[0].main);
 }
 
-let apiKey = "9261c308257e6cb61b3c077acec2b0f7";
-let city = "Porto";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-axios.get(apiUrl).then(displayTemperature);
-
 // Search form
 
 function searchCity(city) {
@@ -141,6 +145,8 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemperature);
 }
+
+searchCity("Porto");
 
 function handleSubmit(event) {
   event.preventDefault();

@@ -55,7 +55,7 @@ body {
 #units .active {
   color: #ffffff;
   font-size: 26px;
-  transition: all 200ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
 #units .active:hover {
@@ -100,6 +100,7 @@ li {
   text-align: center;
   padding: 0px;
   color: #63b7af;
+  font-weight: bold;
 }
 
 .githublink {
