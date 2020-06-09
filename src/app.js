@@ -45,24 +45,6 @@ function formatDate(timestamp) {
   )} ${year} <br/> <small>Last updated ${hours}:${minutes}</small>`;
 }
 
-//Greet user
-
-function greetUser(timestamp) {
-  let now = new Date(timestamp);
-  let hours = now.getHours();
-  if (hours >= 6 || hours < 12) {
-    return `Good morning 😊`;
-  }
-  if (hours >= 12 || hours < 18) {
-    return `Good afternoon 😎`;
-  }
-  if (hours >= 18 || hours < 20) {
-    return `Good evening 😌`;
-  } else {
-    return `Good night 😴`;
-  }
-}
-
 // Display elements
 
 function displayTemperature(response) {
@@ -77,6 +59,7 @@ function displayTemperature(response) {
   let cloudsElement = document.querySelector("#clouds");
   let dateElement = document.querySelector("#current-date");
   let greetElement = document.querySelector("#greetingUser");
+  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -88,6 +71,11 @@ function displayTemperature(response) {
   cloudsElement.innerHTML = Math.round(response.data.clouds.all);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   greetElement.innerHTML = greetUser(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "9261c308257e6cb61b3c077acec2b0f7";
