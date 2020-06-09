@@ -63,6 +63,33 @@ function greetUser(timestamp) {
   }
 }
 
+// Update quote
+
+function updtadeQuote(response) {
+  let description = response;
+
+  if (description === "Thunderstorm") {
+    return `Someone is angry up there ⚡️`;
+  }
+  if (description === "Drizzle") {
+    return `Don't forget your umbrella ☔️`;
+  }
+  if (description === "Rain") {
+    return `Don't forget your umbrella ☔️`;
+  }
+  if (description === "Snow") {
+    return `Do you want to build a snowman? ☃️`;
+  }
+  if (description === "Clear") {
+    return `The sun is shinning 😎`;
+  }
+  if (description === "Clouds") {
+    return `The sun is a little shy today 🌤`;
+  } else {
+    return `What's happening in your city? 🤷🏽‍♀️`;
+  }
+}
+
 // Display elements
 
 function displayTemperature(response) {
@@ -78,6 +105,7 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#current-date");
   let greetElement = document.querySelector("#greetingUser");
   let iconElement = document.querySelector("#icon");
+  let quoteElement = document.querySelector("#quote");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -94,6 +122,7 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  quoteElement.innerHTML = updtadeQuote(response.data.weather[0].main);
 }
 
 let apiKey = "9261c308257e6cb61b3c077acec2b0f7";
