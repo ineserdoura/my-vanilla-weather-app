@@ -51,15 +51,15 @@ function greetUser(timestamp) {
   let now = new Date(timestamp);
   let hoursElement = now.getHours();
   if (hoursElement >= 6 && hoursElement < 12) {
-    return `Good morning 😊`;
+    return `Good morning!`;
   }
   if (hoursElement >= 12 && hoursElement < 18) {
-    return `Good afternoon 😎`;
+    return `Good afternoon!`;
   }
   if (hoursElement >= 18 && hoursElement < 20) {
-    return `Good evening 😌`;
+    return `Good evening!`;
   } else {
-    return `Good night 😴`;
+    return `Good night!`;
   }
 }
 
@@ -130,3 +130,19 @@ let city = "Porto";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
+
+// Search form
+
+function searchCity(city) {
+  let apiKey = "9261c308257e6cb61b3c077acec2b0f7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  searchCity(cityInputElement.value);
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

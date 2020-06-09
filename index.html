@@ -14,57 +14,87 @@
       src="https://kit.fontawesome.com/975bf182f8.js"
       crossorigin="anonymous"
     ></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
 
   <body>
     <div class="container">
+      <div class="containerHeader">
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <form
+              class="form-inline md-form mr-auto mb-4"
+              id="search-form"
+              action="form"
+            >
+              <input
+                class="form-control mr-sm-2"
+                type="text"
+                id="city-input"
+                placeholder="Your City..."
+                autocomplete="off"
+              />
+              <div class="col-2">
+                <button type="submit" id="search" class="btn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              <div class="col-2">
+                <button type="submit" id="search-location" class="btn">
+                  <i class="fas fa-search-location"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
       <div class="containerForecast">
         <div class="row justify-content-center">
           <div class="col-7">
-          
             <h1 id="current-city"></h1>
-                <h3 id="current-temperature"></h3>
-                <span id="units" style="font-size: 20px;">
-                <a id="celsius-link" href="#">°C</a> |
-                <a id="fahrenheit-link" href="#">°F</a>
+            <h3 id="current-temperature"></h3>
+            <span id="units" style="font-size: 20px;">
+              <a id="celsius-link" href="#">°C</a> |
+              <a id="fahrenheit-link" href="#">°F</a>
             </span>
 
-            <img style ="display: block; margin: 0 auto" id="icon"src="" alt="">
+            <img
+              style="display: block; margin: 0 auto;"
+              id="icon"
+              src=""
+              alt=""
+            />
             <h4 id="temperature-description"></h4>
-          <h5> <span id="temp-min"></span>° <span id="temp-max"></span>°</h5>
+            <h5><span id="temp-min"></span>° <span id="temp-max"></span>°</h5>
             <p id="quote"></p>
-           
-          
           </div>
           <div class="col-5">
             <h4 id="greetingUser"></h4>
             <h4 id="current-date">
-              <br>
+              <br />
             </h4>
             <br />
             <ul>
               <li>
                 Real feel
-                <span id="feels-like">
-                </span>°
+                <span id="feels-like"> </span>°
               </li>
               <li>
                 Wind
-                <span id="wind">
-                </span>km/h
+                <span id="wind"> </span>km/h
               </li>
               <li>
                 Humidity
-                <span id="humidity">
-                </span>%
+                <span id="humidity"> </span>%
               </li>
               <li>
                 Clouds
-                <span id="clouds">
-                </span>%
+                <span id="clouds"> </span>%
               </li>
             </ul>
           </div>
@@ -97,14 +127,13 @@
             <br />
             <span class="week">22° 18°</span>
           </div>
-        <div class="col-2">
+          <div class="col-2">
             <h3>Tue</h3>
             <br />
             <span class="week">22° 18°</span>
-        </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div class="footer">
       <small>

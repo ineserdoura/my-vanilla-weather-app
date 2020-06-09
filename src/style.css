@@ -2,7 +2,9 @@ body {
   font-family: "Roboto", sans-serif;
   color: #ffffff;
 }
-/*Container */
+
+/*Container*/
+
 .container {
   width: 600px;
   background-image: linear-gradient(to bottom, #35495e 0%, #63b7af 100%);
@@ -12,12 +14,35 @@ body {
   border-radius: 10px;
 }
 
+.cointanerHeader,
 .containerForecast,
 .containerWeek {
   margin: 10 auto;
   padding: 20px;
   text-align: center;
 }
+
+/*Search form*/
+#search-form {
+  text-align: center;
+}
+.btn {
+  margin: 0 auto;
+  font-size: 20px;
+  background-color: #63b7af;
+  text-align: center;
+  opacity: 0.5;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+.btn:hover {
+  background-color: #63b7af;
+  color: #35495e;
+  opacity: 1;
+}
+
+/*Forecast*/
+
 #current-temperature {
   display: inline;
 }
@@ -53,6 +78,7 @@ li {
   font-weight: bold;
 }
 
+/*Week forecast*/
 .col-2 {
   padding: 5px 5px;
   transition: all 200ms ease-in-out;
@@ -62,6 +88,8 @@ li {
   color: #63b7af;
   border-radius: 4px;
 }
+
+/*Footer*/
 
 .footer {
   text-align: center;
