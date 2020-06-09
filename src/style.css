@@ -32,7 +32,8 @@ body {
   text-decoration: none;
 }
 
-#current-date {
+#current-date,
+#greetingUser {
   text-align: right;
   font-size: 18px;
 }
