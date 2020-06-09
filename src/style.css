@@ -46,14 +46,19 @@ body {
 #current-temperature {
   display: inline;
 }
+
 #celsius-link,
 #fahrenheit-link {
-  color: #a9ddd7;
+  color: #35495e;
+  text-decoration: none;
+}
+#units .active {
+  color: #ffffff;
+  font-size: 26px;
   transition: all 200ms ease-in-out;
 }
-#celsius-link:hover,
-#fahrenheit-link:hover {
-  color: #35495e;
+
+#units .active:hover {
   text-decoration: none;
 }
 
