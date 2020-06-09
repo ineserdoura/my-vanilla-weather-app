@@ -45,6 +45,24 @@ function formatDate(timestamp) {
   )} ${year} <br/> <small>Last updated ${hours}:${minutes}</small>`;
 }
 
+//Greet user
+
+function greetUser(timestamp) {
+  let now = new Date(timestamp);
+  let hoursElement = now.getHours();
+  if (hoursElement >= 6 && hoursElement < 12) {
+    return `Good morning 😊`;
+  }
+  if (hoursElement >= 12 && hoursElement < 18) {
+    return `Good afternoon 😎`;
+  }
+  if (hoursElement >= 18 && hoursElement < 20) {
+    return `Good evening 😌`;
+  } else {
+    return `Good night 😴`;
+  }
+}
+
 // Display elements
 
 function displayTemperature(response) {
