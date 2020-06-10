@@ -3,14 +3,6 @@
 function formatDate(timestamp) {
   let now = new Date(timestamp);
   let date = now.getDate();
-  let hours = now.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = now.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
   let days = [
     "Sunday",
     "Monday",
@@ -43,15 +35,13 @@ function formatDate(timestamp) {
   let year = now.getFullYear();
   return `${day} <br/>${month}, ${getOrdinal(
     date
-  )} ${year} <br/> <small>Last updated ${hours}:${minutes}</small>`;
+  )} ${year} <br/> <small>Last updated ${formatHours(timestamp)}</small>`;
 }
-
 //Greet user
 
 function greetUser(timestamp) {
   let name = prompt("Hello! Can you tell me your name?");
-  let now = new Date(timestamp);
-  let hoursElement = now.getHours();
+  let hoursElement = formatHours(timestamp);
   if (hoursElement >= 6 && hoursElement < 12) {
     return `Good morning ${name}!`;
   }
@@ -82,25 +72,28 @@ function updtadeQuote(response) {
   if (description === "Snow") {
     return `Do you want to build a snowman? ☃️`;
   }
-  if (description === "Clear" && hour < 20) {
+  if (description === "Clear") {
     return `The sun is shinning today 😎`;
   }
-  if (description === "Clear" && hour >= 20) {
-    return `The moon is shinning tonight 🌕`;
-  }
-  if (description === "Clouds" && hour < 20) {
+  if (description === "Clouds") {
     return `The sun is a little shy today 🌤`;
-  }
-  if (description === "Clouds" && hour >= 20) {
-    return `The moon is a little shy today 🌛`;
   } else {
     return `What's happening in your city? 🤷🏽‍♀️`;
   }
 }
 
-let now = new Date();
-let hour = now.getHours();
-
+function formatHours(timestamp) {
+  let now = new Date(timestamp);
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
 // Display elements
 
 function displayTemperature(response) {
@@ -142,13 +135,40 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   quoteElement.innerHTML = updtadeQuote(response.data.weather[0].main);
 }
+// Display forecast
 
-// Search form
+function displayForecast(response) {
+  console.log(response);
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+        <div class="col-2">
+            <h5>
+            ${formatHours(forecast.dt * 1000)}
+            </h5>
+            <img src="http://openweathermap.org/img/wn/${
+              forecast.weather[0].icon
+            }@2x.png" alt="" />
+            <div class="week-temperature">
+            <strong>${Math.round(
+              forecast.main.temp_max
+            )}° </strong>${Math.round(forecast.main.temp_min)}°</div>
+          </div>`;
+  }
+}
+
+// Search engine
 
 function searchCity(city) {
   let apiKey = "9261c308257e6cb61b3c077acec2b0f7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 searchCity("Porto");
