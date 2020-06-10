@@ -1,4 +1,5 @@
 // Display current date
+
 function formatDate(timestamp) {
   let now = new Date(timestamp);
   let date = now.getDate();
@@ -97,7 +98,8 @@ function updtadeQuote(response) {
   }
 }
 
-let hour = null;
+let now = new Date();
+let hour = now.getHours();
 
 // Display elements
 
@@ -116,8 +118,11 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   let quoteElement = document.querySelector("#quote");
 
-  hour = response.data.dt * 1000;
+  now = response.data.dt * 1000;
   celsiusTemperature = Math.round(response.data.main.temp);
+  minCelsiusTemperature = Math.round(response.data.main.temp_min);
+  maxCelsiusTemperature = Math.round(response.data.main.temp_max);
+  realFeelCelsius = Math.round(response.data.main.feels_like);
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
@@ -174,8 +179,6 @@ button.addEventListener("click", getCurrentPosition);
 
 // Convert Units
 
-let celsiusTemperature = null;
-
 function displayFahrenheit(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
@@ -183,6 +186,18 @@ function displayFahrenheit(event) {
   let fahrenheitTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
   let temperatureElement = document.querySelector("#current-temperature");
   temperatureElement.innerHTML = fahrenheitTemp;
+
+  let minTemperature = Math.round((minCelsiusTemperature * 9) / 5 + 32);
+  let minTemperatureElement = document.querySelector("#temp-min");
+  minTemperatureElement.innerHTML = minTemperature;
+
+  let maxTemperature = Math.round((maxCelsiusTemperature * 9) / 5 + 32);
+  let maxTemperatureElement = document.querySelector("#temp-max");
+  maxTemperatureElement.innerHTML = maxTemperature;
+
+  let realFeelTemperature = Math.round((realFeelCelsius * 9) / 5 + 32);
+  let realFeelElement = document.querySelector("#feels-like");
+  realFeelElement.innerHTML = realFeelTemperature;
 }
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
@@ -193,6 +208,20 @@ function displayCelsius(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#current-temperature");
   temperatureElement.innerHTML = celsiusTemperature;
+
+  let minTemperatureElement = document.querySelector("#temp-min");
+  minTemperatureElement.innerHTML = minCelsiusTemperature;
+
+  let maxTemperatureElement = document.querySelector("#temp-max");
+  maxTemperatureElement.innerHTML = maxCelsiusTemperature;
+
+  let realFeelElement = document.querySelector("#feels-like");
+  realFeelElement.innerHTML = realFeelCelsius;
 }
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
+
+let celsiusTemperature = null;
+let minCelsiusTemperature = null;
+let maxCelsiusTemperature = null;
+let realFeelCelsius = null;
