@@ -40,18 +40,18 @@ function formatDate(timestamp) {
 //Greet user
 
 function greetUser(timestamp) {
-  let name = prompt("Hello! Can you tell me your name?");
-  let hoursElement = formatHours(timestamp);
+  let now = new Date(timestamp);
+  let hoursElement = now.getHours();
   if (hoursElement >= 6 && hoursElement < 12) {
-    return `Good morning ${name}!`;
+    return `Good morning!`;
   }
   if (hoursElement >= 12 && hoursElement < 18) {
-    return `Good afternoon ${name}!`;
+    return `Good afternoon`;
   }
   if (hoursElement >= 18 && hoursElement < 20) {
-    return `Good evening ${name}!`;
+    return `Good evening!`;
   } else {
-    return `Good night ${name}!`;
+    return `Good night!`;
   }
 }
 
@@ -97,6 +97,7 @@ function formatHours(timestamp) {
 // Display elements
 
 function displayTemperature(response) {
+  console.log(response);
   let temperatureElement = document.querySelector("#current-temperature");
   let cityElement = document.querySelector("#current-city");
   let descriptionElement = document.querySelector("#temperature-description");
@@ -118,7 +119,7 @@ function displayTemperature(response) {
   realFeelCelsius = Math.round(response.data.main.feels_like);
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  cityElement.innerHTML = response.data.name;
+  cityElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   minElement.innerHTML = Math.round(response.data.main.temp_min);
   maxElement.innerHTML = Math.round(response.data.main.temp_max);
@@ -138,7 +139,6 @@ function displayTemperature(response) {
 // Display forecast
 
 function displayForecast(response) {
-  console.log(response);
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
