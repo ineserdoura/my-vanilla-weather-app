@@ -24,92 +24,99 @@
 
   <body>
     <div class="container">
-      <div class="containerHeader">
-        <div class="row justify-content-center">
-          <div class="col-8">
-            <form
-              class="form-inline md-form mr-auto mb-4"
-              id="search-form"
-              action="form"
-            >
-              <input
-                class="form-control mr-sm-2"
-                type="text"
-                id="city-input"
-                placeholder="Your City..."
-                autocomplete="off"
-              />
-              <div class="col-2">
-                <button type="submit" id="search" class="btn">
-                  <i class="fas fa-search"></i>
-                </button>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="search-engine">
+            <div class="row justify-content-left">
+              <div class="col-8">
+                <form
+                  class="form-inline md-form mr-auto mb-4"
+                  id="search-form"
+                  action="form"
+                >
+                  <input
+                    class="form-control mr-sm-2"
+                    type="text"
+                    id="city-input"
+                    placeholder="Your City..."
+                    autocomplete="off"
+                  />
+                  <div class="col-2">
+                    <button type="submit" id="search" class="btn">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                  <div class="col-2">
+                    <button type="submit" id="search-location" class="btn">
+                      <i class="fas fa-search-location"></i>
+                    </button>
+                  </div>
+                </form>
               </div>
-              <div class="col-2">
-                <button type="submit" id="search-location" class="btn">
-                  <i class="fas fa-search-location"></i>
-                </button>
+            </div>
+          </div>
+          <div class="overview">
+            <div class="row">
+              <div class="col-7">
+                <h1 id="current-city"></h1>
+                <div class="weather-temperature">
+                  <img id="icon" src="" alt="" />
+                  <h2 id="current-temperature"></h2>
+                  <span id="units" style="font-size: 20px;">
+                    <a id="celsius-link" class="active" href="#">°C</a>
+                    <a id="fahrenheit-link" href="#">°F</a>
+                  </span>
+                  <h4 id="temperature-description"></h4>
+                  <h5>
+                    <span id="temp-max"><strong></strong></span>°
+                    <span id="temp-min" style="opacity: 0.6;"></span>°
+                  </h5>
+                  <p id="quote"></p>
+                </div>
               </div>
-            </form>
+
+              <div class="col-5 extra-data">
+                <h4 id="greetingUser"></h4>
+                <h4 id="current-date">
+                  <br />
+                </h4>
+                <br />
+                <ul>
+                  <li>
+                    Real feel
+                    <span id="feels-like"> </span>°
+                  </li>
+                  <li>
+                    Wind
+                    <span id="wind"> </span> km/h
+                  </li>
+                  <li>
+                    Humidity
+                    <span id="humidity"> </span>%
+                  </li>
+                  <li>
+                    Clouds
+                    <span id="clouds"> </span>%
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="weather-forecast">
+            <div class="row" id="forecast"></div>
           </div>
         </div>
-      </div>
-      <div class="containerForecast">
-        <div class="row justify-content-center">
-          <div class="col-7">
-            <h1 id="current-city"></h1>
-            <img id="icon" src="" alt="" />
-            <h2 id="current-temperature"></h2>
-            <span id="units" style="font-size: 20px;">
-              <a id="celsius-link" class="active" href="#">°C</a>
-              <a id="fahrenheit-link" href="#">°F</a>
-            </span>
-            <h4 id="temperature-description"></h4>
-            <h5>
-              <span id="temp-max"><strong></strong></span>°
-              <span id="temp-min" style="opacity: 0.6;"></span>°
-            </h5>
-            <p id="quote"></p>
-          </div>
-          <div class="col-5">
-            <h4 id="greetingUser"></h4>
-            <h4 id="current-date">
-              <br />
-            </h4>
-            <br />
-            <ul>
-              <li>
-                Real feel
-                <span id="feels-like"> </span>°
-              </li>
-              <li>
-                Wind
-                <span id="wind"> </span> km/h
-              </li>
-              <li>
-                Humidity
-                <span id="humidity"> </span>%
-              </li>
-              <li>
-                Clouds
-                <span id="clouds"> </span>%
-              </li>
-            </ul>
-          </div>
+        <div class="footer">
+          <small>
+            <a
+              class="githublink"
+              href="https://github.com/ineserdoura?tab=repositories"
+              target="_blank"
+              >Open-source code </a
+            >by 👩🏽‍💻 Inês Serdoura
+          </small>
         </div>
       </div>
-      <div class="containerWeek">
-        <div class="row" id="forecast"></div>
-      </div>
-    </div>
-    <div class="footer">
-      <small>
-        <a
-          class="githublink"
-          href="https://github.com/ineserdoura?tab=repositories"
-          target="_blank"
-          >Open-source code </a
-        >by 👩🏽‍💻 Inês Serdoura
-      </small>
     </div>
     <script src="src/app.js"></script>
   </body>
