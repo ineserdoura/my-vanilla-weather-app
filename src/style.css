@@ -12,14 +12,10 @@ body {
   padding: 30px;
   border-radius: 10px;
 }
+/*Search engine*/
 
-.overview {
-  margin: 30px auto;
-  text-align: center;
-}
-
-#current-city {
-  text-align: center;
+.search-engine {
+  padding-top: 20px;
 }
 
 .btn {
@@ -42,6 +38,20 @@ body {
   opacity: 1;
 }
 
+.date h4 {
+  font-size: 18px;
+  text-align: right;
+  line-height: 1.2;
+}
+
+/*Overview*/
+
+.overview {
+  margin: 10px auto;
+  padding: 20px;
+  text-align: center;
+}
+
 #current-temperature,
 #celsius-link,
 #fahrenheit-link {
@@ -50,28 +60,22 @@ body {
   bottom: -15px;
 }
 
-#celsius-link,
-#fahrenheit-link {
+.overview a {
   color: #35495e;
   text-decoration: none;
 }
-#units .active {
+.overview .active {
   color: #ffffff;
   font-size: 26px;
   transition: all 500ms ease-in-out;
 }
 
-#units .active:hover {
+.overview .active:hover {
   text-decoration: none;
 }
 
 #temperature-description:first-letter {
   text-transform: capitalize;
-}
-.date h4 {
-  font-size: 18px;
-  text-align: right;
-  line-height: 1.2;
 }
 
 .extra-data ul {
@@ -81,34 +85,27 @@ body {
   padding: 50px 20px;
 }
 
-#feels-like,
-#wind,
-#humidity,
-#clouds {
-  font-weight: bold;
-}
+/*Forecast*/
 
 .weather-forecast {
   margin-top: 10px;
   padding: 5px 5px;
   transition: all 200ms ease-in-out;
+  text-align: center;
 }
 
 .weather-forecast h5 {
   font-size: 14px;
-  height: 15px;
-  line-height: 15px;
 }
 
 .weather-forecast img {
   display: block;
   margin: 0 auto;
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
 }
 
 .col-2 {
-  text-align: center;
   padding: 10px;
   transition: all 200ms ease-in-out;
 }
@@ -119,6 +116,8 @@ body {
   border-radius: 4px;
 }
 
+/*Footer*/
+
 .footer {
   text-align: center;
   padding: 0px;
@@ -127,6 +126,6 @@ body {
   margin-bottom: 50px;
 }
 
-.githublink {
+.footer a {
   color: #35495e;
 }
