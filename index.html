@@ -41,64 +41,65 @@
                     placeholder="Your City..."
                     autocomplete="off"
                   />
-                  <div class="col-2">
-                    <button type="submit" id="search" class="btn">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </div>
-                  <div class="col-2">
-                    <button type="submit" id="search-location" class="btn">
-                      <i class="fas fa-search-location"></i>
-                    </button>
-                  </div>
+
+                  <button type="submit" id="search" class="btn">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <button type="submit" id="search-location" class="btn">
+                    <i class="fas fa-search-location"></i>
+                  </button>
                 </form>
               </div>
-            </div>
-          </div>
-          <div class="overview">
-            <div class="row">
-              <div class="col-7">
-                <h1 id="current-city"></h1>
-                <div class="weather-temperature">
-                  <img id="icon" src="" alt="" />
-                  <h2 id="current-temperature"></h2>
-                  <span id="units" style="font-size: 20px;">
-                    <a id="celsius-link" class="active" href="#">°C</a>
-                    <a id="fahrenheit-link" href="#">°F</a>
-                  </span>
-                  <h4 id="temperature-description"></h4>
-                  <h5>
-                    <span id="temp-max"><strong></strong></span>°
-                    <span id="temp-min" style="opacity: 0.6;"></span>°
-                  </h5>
-                  <p id="quote"></p>
-                </div>
-              </div>
-
-              <div class="col-5 extra-data">
+              <div class="col-4 date">
                 <h4 id="greetingUser"></h4>
                 <h4 id="current-date">
                   <br />
                 </h4>
-                <br />
-                <ul>
-                  <li>
-                    Real feel
-                    <span id="feels-like"> </span>°
-                  </li>
-                  <li>
-                    Wind
-                    <span id="wind"> </span> km/h
-                  </li>
-                  <li>
-                    Humidity
-                    <span id="humidity"> </span>%
-                  </li>
-                  <li>
-                    Clouds
-                    <span id="clouds"> </span>%
-                  </li>
-                </ul>
+              </div>
+            </div>
+            <div class="overview">
+              <div class="row">
+                <div class="col-6">
+                  <h1 id="current-city"></h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="weather-temperature">
+                    <img id="icon" src="" alt="" />
+                    <h2 id="current-temperature"></h2>
+                    <span id="units" style="font-size: 20px;">
+                      <a id="celsius-link" class="active" href="#">°C</a>
+                      <a id="fahrenheit-link" href="#">°F</a>
+                    </span>
+                    <h4 id="temperature-description"></h4>
+                    <h5>
+                      <span id="temp-max"><strong></strong></span>°
+                      <span id="temp-min" style="opacity: 0.6;"></span>°
+                    </h5>
+                    <p id="quote"></p>
+                  </div>
+                </div>
+                <div class="col-6 extra-data">
+                  <ul>
+                    <li>
+                      Real feel
+                      <span id="feels-like"> </span>°
+                    </li>
+                    <li>
+                      Wind
+                      <span id="wind"> </span> km/h
+                    </li>
+                    <li>
+                      Humidity
+                      <span id="humidity"> </span>%
+                    </li>
+                    <li>
+                      Clouds
+                      <span id="clouds"> </span>%
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

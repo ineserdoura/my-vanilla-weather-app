@@ -15,9 +15,10 @@ body {
 
 .overview {
   margin: 30px auto;
+  text-align: center;
 }
 
-.weather-temperature {
+#current-city {
   text-align: center;
 }
 
@@ -29,6 +30,11 @@ body {
   opacity: 0.5;
   border-radius: 50%;
   transition: all 0.5s ease-in-out;
+}
+
+#search-location {
+  position: relative;
+  left: -25px;
 }
 .btn:hover {
   background-color: #63b7af;
@@ -59,18 +65,20 @@ body {
   text-decoration: none;
 }
 
-#current-date,
-#greetingUser {
-  text-align: right;
-  font-size: 18px;
-}
-
-li {
-  list-style: none;
-  font-size: 16px;
-}
 #temperature-description:first-letter {
   text-transform: capitalize;
+}
+.date h4 {
+  font-size: 18px;
+  text-align: right;
+  line-height: 1.2;
+}
+
+.extra-data ul {
+  margin: 0 auto;
+  font-size: 20px;
+  list-style: none;
+  padding: 50px 20px;
 }
 
 #feels-like,
@@ -80,23 +88,36 @@ li {
   font-weight: bold;
 }
 
-/*Week forecast*/
-.col-2 {
+.weather-forecast {
+  margin-top: 10px;
   padding: 5px 5px;
   transition: all 200ms ease-in-out;
-  text-align: center;
 }
-.col-2 img {
+
+.weather-forecast h5 {
+  font-size: 14px;
+  height: 15px;
+  line-height: 15px;
+}
+
+.weather-forecast img {
   display: block;
   margin: 0 auto;
+  height: 50px;
+  width: 50px;
 }
+
+.col-2 {
+  text-align: center;
+  padding: 10px;
+  transition: all 200ms ease-in-out;
+}
+
 .col-2:hover {
-  background-color: #35495e;
+  background-color: rgba(53, 73, 93, 0.8);
   color: #63b7af;
   border-radius: 4px;
 }
-
-/*Footer*/
 
 .footer {
   text-align: center;
