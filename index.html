@@ -28,28 +28,24 @@
         <div class="weather-app">
           <div class="search-engine">
             <div class="row justify-content-left">
-              <div class="col-8">
-                <form
-                  class="form-inline md-form mr-auto mb-4"
-                  id="search-form"
-                  action="form"
-                >
+              <div class="col-5">
+                <form class="form-inline" id="search-form" action="form">
                   <input
-                    class="form-control mr-sm-2"
-                    type="text"
+                    class="form-control"type="text"
                     id="city-input"
                     placeholder="Your City..."
                     autocomplete="off"
                   />
-
+                </div>
+                <div class="col-3">
                   <button type="submit" id="search" class="btn">
                     <i class="fas fa-search"></i>
                   </button>
                   <button type="submit" id="search-location" class="btn">
                     <i class="fas fa-search-location"></i>
                   </button>
+                  </div>
                 </form>
-              </div>
               <div class="col-4 date">
                 <h4 id="greetingUser"></h4>
                 <h4 id="current-date">

@@ -28,10 +28,6 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-#search-location {
-  position: relative;
-  left: -25px;
-}
 .btn:hover {
   background-color: #63b7af;
   color: #35495e;
@@ -101,19 +97,17 @@ body {
 .weather-forecast img {
   display: block;
   margin: 0 auto;
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
 }
 
 .col-2 {
   padding: 10px;
-  transition: all 200ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .col-2:hover {
-  background-color: rgba(53, 73, 93, 0.8);
-  color: #63b7af;
-  border-radius: 4px;
+  color: #35495e;
 }
 
 /*Footer*/
