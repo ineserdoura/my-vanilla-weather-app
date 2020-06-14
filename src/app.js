@@ -3,16 +3,6 @@
 function formatDate(timestamp) {
   let now = new Date(timestamp);
   let date = now.getDate();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[now.getDay()];
   let months = [
     "January",
     "February",
@@ -33,7 +23,7 @@ function formatDate(timestamp) {
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
   };
   let year = now.getFullYear();
-  return `${day} <br/>${month}, ${getOrdinal(
+  return `${formatDay(timestamp)} <br/>${month}, ${getOrdinal(
     date
   )} ${year} <br/> <small>Last updated ${formatHours(timestamp)}</small>`;
 }
@@ -50,6 +40,22 @@ function formatHours(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
+
+function formatDay(timestamp) {
+  let now = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  return `${day}`;
+}
+
 //Greet user
 
 function greetUser(timestamp) {
@@ -62,33 +68,6 @@ function greetUser(timestamp) {
     return `Good afternoon!`;
   } else {
     return `Good evening!`;
-  }
-}
-
-// Update quote
-
-function updtadeQuote(response) {
-  let description = response;
-
-  if (description === "Thunderstorm") {
-    return `Someone is angry up there ⚡️`;
-  }
-  if (description === "Drizzle") {
-    return `Don't forget your umbrella ☔️`;
-  }
-  if (description === "Rain") {
-    return `Don't forget your umbrella ☔️`;
-  }
-  if (description === "Snow") {
-    return `Do you want to build a snowman? ☃️`;
-  }
-  if (description === "Clear") {
-    return `The sun is shinning today 😎`;
-  }
-  if (description === "Clouds") {
-    return `The sun is a little shy today 🌤`;
-  } else {
-    return `What's happening in your city? 🤷🏽‍♀️`;
   }
 }
 
@@ -107,7 +86,6 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#current-date");
   let greetElement = document.querySelector("#greetingUser");
   let iconElement = document.querySelector("#icon");
-  let quoteElement = document.querySelector("#quote");
 
   now = response.data.dt * 1000;
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -131,18 +109,19 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  quoteElement.innerHTML = updtadeQuote(response.data.weather[0].main);
 }
 // Display forecast
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
+  let forecast = null;
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
         <div class="col-2">
             <h5>
+            ${formatDay(forecast.dt * 1000)}
             ${formatHours(forecast.dt * 1000)}
             </h5>
             <img src="http://openweathermap.org/img/wn/${
@@ -150,12 +129,8 @@ function displayForecast(response) {
             }@2x.png" alt="" />
             <small>${forecast.weather[0].main}</small>
             <div> 
-            <span class="week-max">${Math.round(
-              forecast.main.temp_max
-            )}° </span>
-            <span class ="week-min">${Math.round(
-              forecast.main.temp_min
-            )}° </span>
+            <span class="week-max">${Math.round(forecast.main.temp_max)}°</span>
+            <span class="week-min">${Math.round(forecast.main.temp_min)}°</span>
             </div>
           </div>`;
   }
