@@ -6,8 +6,8 @@ body {
   margin: 50px auto;
 }
 .weather-app {
-  width: 600px;
-  height: 600px;
+  width: fit-content;
+  height: fit-content;
   background-image: linear-gradient(to bottom, #35495e 0%, #518d90 100%);
   margin: 0 auto;
   margin-bottom: 0px;
@@ -38,7 +38,7 @@ body {
 
 .date h4 {
   font-size: 16px;
-  text-align: right;
+  text-align: center;
   line-height: 1.2;
 }
 

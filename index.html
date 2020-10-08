@@ -23,13 +23,13 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="search-engine">
             <div class="row justify-content-left">
-              <div class="col-5">
-                <form class="form-inline" id="search-form" action="form">
+              <div class="col-sm-5">
+                <form  id="search-form" action="form">
                   <input
                     class="form-control"type="text"
                     id="city-input"
@@ -37,7 +37,7 @@
                     autocomplete="off"
                   />
                 </div>
-                <div class="col-3">
+                <div class="col-sm-3 ">
                   <button type="submit" id="search" class="btn">
                     <i class="fas fa-search"></i>
                   </button>
@@ -46,7 +46,7 @@
                   </button>
                   </div>
                 </form>
-              <div class="col-4 date">
+              <div class="col-sm-4 date">
                 <h4 id="greetingUser"></h4>
                 <h4 id="current-date"></h4>
               </div>
@@ -54,12 +54,12 @@
           </div>
           <div class="overview">
             <div class="row">
-              <div class="col-12">
+              <div class="col-sm-12">
                 <h1 id="current-city"></h1>
               </div>
             </div>
             <div class="row">
-              <div class="col-6">
+              <div class="col-sm-6">
                 <div class="weather-temperature">
                   <img id="icon" src="" alt="" />
                   <h2 id="current-temperature"></h2>
@@ -74,7 +74,7 @@
                   </h5>
                 </div>
               </div>
-              <div class="col-6 extra-data">
+              <div class="col-sm-6 extra-data">
                 <ul>
                   <li>
                     Real feel
