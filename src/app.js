@@ -121,7 +121,6 @@ function displayForecast(response) {
     forecastElement.innerHTML += `
         <div class="col-2">
             <h5>
-            ${formatDay(forecast.dt * 1000)}
             ${formatHours(forecast.dt * 1000)}
             </h5>
             <img src="http://openweathermap.org/img/wn/${
